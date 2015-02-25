@@ -1,0 +1,21 @@
+<h1>Listing Expenses</h1>
+<%= link_to 'New Expense', new_expense_path %>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Date</th>
+    <th>Concept</th>
+    <th colspan="1"></th>
+  </tr>
+  <% @expenses.each do |expense| %>
+    <tr>
+      <td><%= expense.category.name %></td>
+      <td><%= expense.date.strftime("%B %d, %Y") %></td>
+      <td><%= expense.concept %></td>
+      <td><%= expense.amount %></td>
+      <td><%= link_to 'Show', expense_path(expense) %></td>
+    </tr>
+    
+  <% end %>  
+</table>
