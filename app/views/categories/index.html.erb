@@ -1,15 +1,21 @@
 <h1>Listing Categories</h1>
-<%= link_to 'New Category', new_category_path %>
 
-<table>
+<p><%= link_to 'New Category', new_category_path %></p>
+<p><%= link_to 'New Expense', new_expense_path %></p>
+
+
+<table class="table">
   <tr>
     <th>Name</th>
-    <th colspan="1"></th>
+    <th colspan="2"></th>
   </tr>
   <% @categories.each do |category| %>
     <tr>
       <td><%= category.name %></td>
       <td><%= link_to 'Show', category_path(category) %></td>
+      <td><%= link_to 'Destroy', category_path(category),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
     
   <% end %>  

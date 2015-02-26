@@ -5,4 +5,17 @@
   <%= @category.name %>
 </p>
 
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th colspan="1"></th>
+  </tr>
+  <% @category.expenses.each do |category| %>
+    <tr>
+      <td><%= category.concept %></td>
+    </tr>
+    
+  <% end %>  
+</table>
+
 <%= link_to 'Back', categories_path %>
