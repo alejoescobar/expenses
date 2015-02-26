@@ -12,11 +12,29 @@ class ExpensesController < ApplicationController
     @expense = Expense.new
   end
 
+  def edit
+    @expense = Expense.find(params[:id])
+  end
+
   def create
     @expense = Expense.new(expense_params)
     
     @expense.save   
     redirect_to @expense
+  end
+
+  def update
+    @expense = Expense.find(params[:id])
+
+    @expense.update(expense_params)
+    redirect_to @expense
+  end
+
+  def destroy
+    @expense = Expense.find(params[:id])
+    @expense.destroy
+
+    redirect_to expenses_path
   end
 
   private
