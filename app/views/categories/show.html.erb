@@ -7,12 +7,15 @@
 
 <table class="table">
   <tr>
-    <th>Name</th>
-    <th colspan="1"></th>
+    <th>Date</th>
+    <th>Concept</th>
+    <th>Amount</th>
   </tr>
   <% @category.expenses.each do |category| %>
     <tr>
+      <td><%= category.date.strftime("%B %d, %Y") %></td>
       <td><%= category.concept %></td>
+      <td><%= category.amount %></td>
     </tr>
     
   <% end %>  

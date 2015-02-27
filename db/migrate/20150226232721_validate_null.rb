@@ -4,6 +4,6 @@ class ValidateNull < ActiveRecord::Migration
     change_column_null :expenses, :date, false
     change_column_null :expenses, :concept, false
     change_column_null :expenses, :amount, false
-    change_column_null :expenses, :category_id  , false
+    change_column_null :expenses, :category_id, false
   end
 end
