@@ -1,18 +1,6 @@
 <%= form_for @expense do |f| %>
 
-  <% if @expense.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@expense.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @expense.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial:"shared/form_error", locals: { form: @expense } %>
 
   <%= f.collection_select( :category_id, Category.all, :id, :name) %>
   <p>
